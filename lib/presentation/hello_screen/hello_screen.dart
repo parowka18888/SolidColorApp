@@ -12,11 +12,14 @@ class HelloScreen extends StatefulWidget{
 class _HelloScreenState extends State<HelloScreen> {
 
   ColorController colorController = ColorController();
+  static const double _fontScale = 0.1;
+
+  void _changeColor() => setState(ColorController.setColors);
 
   @override
   Widget build(BuildContext context){
     return GestureDetector(
-      onTap: () => setState(ColorController.setColors),
+      onTap: _changeColor,
       child: Scaffold(
           backgroundColor: ColorController.backgroundColor,
           body: Center(
@@ -24,7 +27,7 @@ class _HelloScreenState extends State<HelloScreen> {
               "Hello  there!",
               style: TextStyle(
                   color: ColorController.fontColor,
-                  fontSize: 100,
+                  fontSize: MediaQuery.sizeOf(context).width * _fontScale,
                   fontWeight: FontWeight.bold
               ),
             ),
