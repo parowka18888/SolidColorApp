@@ -4,6 +4,7 @@ import 'package:solidcolorapp/presentation/hello_screen/hello_screen.dart';
 void main() {
   runApp(const Main());
 }
+
 /// main class for the application - it defines theme and home screen
 class Main extends StatelessWidget {
   /// class constructor
