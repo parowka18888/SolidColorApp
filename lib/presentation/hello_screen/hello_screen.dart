@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:solidcolorapp/features/color_controller/color_controller.dart';
 
 class HelloScreen extends StatefulWidget{
   const HelloScreen({super.key});
@@ -11,12 +12,12 @@ class _HelloScreen extends State<HelloScreen> {
   @override
   Widget build(BuildContext context){
     return Scaffold(
-        backgroundColor: Colors.lightGreen,
+        backgroundColor: ColorController.getRandomColor(),
         body: Center(
-          child: const Text(
+          child: Text(
             "Hello  there!",
             style: TextStyle(
-                color: Colors.deepPurple,
+                color: ColorController.getRandomColor(),
                 fontSize: 100,
                 fontWeight: FontWeight.bold
             ),
