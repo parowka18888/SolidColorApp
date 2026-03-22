@@ -20,16 +20,18 @@ class _HelloScreenState extends State<HelloScreen> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: _changeColor,
-      child: Scaffold(
-        backgroundColor: ColorController.backgroundColor,
-        body: Center(
-          child: Text(
-            "Hello  there!",
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 1250),
+        color: ColorController.backgroundColor,
+        child: Center(
+          child: AnimatedDefaultTextStyle(
             style: TextStyle(
               color: ColorController.fontColor,
               fontSize: MediaQuery.sizeOf(context).width * _fontScale,
               fontWeight: FontWeight.bold,
             ),
+            duration: const Duration(milliseconds: 500),
+            child: const Text("Hello  there!"),
           ),
         ),
       ),
